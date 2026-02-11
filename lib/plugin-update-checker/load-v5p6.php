@@ -8,6 +8,11 @@ use YahnisElsts\PluginUpdateChecker\v5p6\PucFactory as MinorFactory;
 require __DIR__ . '/Puc/v5p6/Autoloader.php';
 new Autoloader();
 
+// Load Parsedown for parsing GitHub release notes
+if ( !class_exists('Parsedown', false) ) {
+	require __DIR__ . '/Puc/v5p6/Parsedown.php';
+}
+
 require __DIR__ . '/Puc/v5p6/PucFactory.php';
 require __DIR__ . '/Puc/v5/PucFactory.php';
 
