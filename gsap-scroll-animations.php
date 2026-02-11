@@ -3,10 +3,14 @@
  * Plugin Name: GSAP Scroll Animations
  * Plugin URI: www.blu8print.com
  * Description: Simple GSAP scroll animations by HTML ID with accessibility support
- * Version: 1.1.0
+ * Version: 1.1.1
+ * Requires at least: 5.0
+ * Requires PHP: 7.4
+ * Tested up to: 6.7
  * Author: Blueprint 8
  * Author URI: www.blu8print.com
  * License: GPL v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 // Exit if accessed directly
