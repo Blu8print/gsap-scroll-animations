@@ -3,7 +3,7 @@
  * Plugin Name: GSAP Scroll Animations
  * Plugin URI: www.blu8print.com
  * Description: Simple GSAP scroll animations by HTML ID with accessibility support
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Blueprint 8
  * Author URI: www.blu8print.com
  * License: GPL v2 or later
@@ -863,242 +863,163 @@ class GSAP_Scroll_Animations {
                     <button type="button" id="add-row" class="button">+ Add Row</button>
                 </p>
 
-                <hr style="margin-top: 40px; margin-bottom: 30px;">
 
-                <h2>Class-Based Animation System</h2>
-                <p>Enable CSS class-based animations for more advanced effects. Add classes like <code>gsap-fade-up</code>, <code>gsap-parallax</code>, etc. to your HTML elements.</p>
-
-                <div style="background: #f5f5f5; padding: 15px; border-left: 4px solid #0073aa; margin-bottom: 20px;">
-                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                        <input type="checkbox" name="class_based_enabled" value="1" <?php checked(get_option($this->option_name . '_class_based_enabled'), true); ?>>
-                        <strong>Enable Class-Based Animation System</strong>
-                    </label>
-                    <p style="margin-top: 10px; margin-bottom: 0; font-size: 13px; color: #666;">
-                        When enabled, animations with CSS classes will load GSAP only on pages containing these classes.
-                    </p>
-                </div>
-
-                <h3>Available Animation Classes</h3>
-                <p style="color: #666;">Click on category headings to see available classes and their data attributes:</p>
-
-                <div style="background: #fff; border: 1px solid #ddd; border-radius: 4px; margin-top: 20px;">
-                    <!-- Parallax Effects -->
-                    <div style="border-bottom: 1px solid #ddd;">
-                        <button type="button" class="class-category-toggle" style="width: 100%; text-align: left; padding: 12px 15px; background: #f9f9f9; border: none; cursor: pointer; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
-                            <span>Parallax Effects</span>
-                            <span class="toggle-icon">▼</span>
-                        </button>
-                        <div class="class-category-content" style="display: none; padding: 15px;">
-                            <table style="width: 100%; border-collapse: collapse;">
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 180px;"><code>gsap-parallax</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Vertical parallax effect</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 200px;"><code>data-speed="-5"</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>gsap-horizontal</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Horizontal parallax</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>data-hspeed="50"</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px;"><code>gsap-diagonal</code></td>
-                                    <td style="padding: 8px;">Diagonal movement</td>
-                                    <td style="padding: 8px;"><code>data-speed</code>, <code>data-hspeed</code></td>
-                                </tr>
-                            </table>
-                        </div>
+                <!-- HTML ID Usage Guide -->
+                <div style="background: #ffffff; border: 2px solid #353f6d; border-radius: 8px; margin-top: 40px; overflow: hidden;">
+                    <!-- Header -->
+                    <div style="background: #353f6d; color: white; padding: 25px 30px;">
+                        <h2 style="margin: 0; color: white; font-size: 24px; font-weight: 600;">How to Use HTML ID Animations</h2>
+                        <p style="margin: 10px 0 0 0; color: #ffffff; opacity: 0.95; font-size: 14px;">Simple, beginner-friendly guide to adding scroll animations</p>
                     </div>
 
-                    <!-- Fade Animations -->
-                    <div style="border-bottom: 1px solid #ddd;">
-                        <button type="button" class="class-category-toggle" style="width: 100%; text-align: left; padding: 12px 15px; background: #f9f9f9; border: none; cursor: pointer; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
-                            <span>Fade Animations</span>
-                            <span class="toggle-icon">▼</span>
-                        </button>
-                        <div class="class-category-content" style="display: none; padding: 15px;">
-                            <table style="width: 100%; border-collapse: collapse;">
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 180px;"><code>gsap-fade</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Simple fade in</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 200px;"><code>data-duration</code>, <code>data-delay</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>gsap-fade-up</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Fade from bottom</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>data-distance="60"</code>, <code>data-duration</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>gsap-fade-down</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Fade from top</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>data-distance="60"</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>gsap-fade-left</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Fade from left</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>data-distance="60"</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px;"><code>gsap-fade-right</code></td>
-                                    <td style="padding: 8px;">Fade from right</td>
-                                    <td style="padding: 8px;"><code>data-distance="60"</code></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                    <!-- Content -->
+                    <div style="padding: 30px;">
+                        <!-- Step-by-step Guide -->
+                        <div style="margin-bottom: 35px;">
+                            <h3 style="color: #353f6d; margin-top: 0; font-size: 20px; border-bottom: 2px solid #353f6d; padding-bottom: 10px;">Quick Start Guide</h3>
 
-                    <!-- Scale & Zoom -->
-                    <div style="border-bottom: 1px solid #ddd;">
-                        <button type="button" class="class-category-toggle" style="width: 100%; text-align: left; padding: 12px 15px; background: #f9f9f9; border: none; cursor: pointer; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
-                            <span>Scale & Zoom</span>
-                            <span class="toggle-icon">▼</span>
-                        </button>
-                        <div class="class-category-content" style="display: none; padding: 15px;">
-                            <table style="width: 100%; border-collapse: collapse;">
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 180px;"><code>gsap-scale</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Scale in animation</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 200px;"><code>data-scale="0.8"</code>, <code>data-duration</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px;"><code>gsap-zoom</code></td>
-                                    <td style="padding: 8px;">Zoom on scroll</td>
-                                    <td style="padding: 8px;"><code>data-scale="1.2"</code></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                            <div style="display: grid; gap: 20px; margin-top: 25px;">
+                                <!-- Step 1 -->
+                                <div style="background: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #353f6d;">
+                                    <div style="font-weight: 600; color: #353f6d; font-size: 16px; margin-bottom: 10px;">
+                                        <span style="background: #353f6d; color: white; padding: 4px 10px; border-radius: 4px; margin-right: 10px;">1</span>
+                                        Add an Animation in the Table Above
+                                    </div>
+                                    <p style="margin: 10px 0 10px 40px; color: #555; line-height: 1.6;">
+                                        Fill in an HTML ID (like <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">hero-section</code>), choose an animation type, and set your timing preferences.
+                                    </p>
+                                </div>
 
-                    <!-- Rotation & Flip -->
-                    <div style="border-bottom: 1px solid #ddd;">
-                        <button type="button" class="class-category-toggle" style="width: 100%; text-align: left; padding: 12px 15px; background: #f9f9f9; border: none; cursor: pointer; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
-                            <span>Rotation & Flip</span>
-                            <span class="toggle-icon">▼</span>
-                        </button>
-                        <div class="class-category-content" style="display: none; padding: 15px;">
-                            <table style="width: 100%; border-collapse: collapse;">
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 180px;"><code>gsap-rotate</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Rotate on scroll</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 200px;"><code>data-rotate="360"</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px;"><code>gsap-flip</code></td>
-                                    <td style="padding: 8px;">3D flip animation</td>
-                                    <td style="padding: 8px;"><code>data-flip="90"</code>, <code>data-duration</code></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- Pinning & Sticky -->
-                    <div style="border-bottom: 1px solid #ddd;">
-                        <button type="button" class="class-category-toggle" style="width: 100%; text-align: left; padding: 12px 15px; background: #f9f9f9; border: none; cursor: pointer; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
-                            <span>Pinning & Sticky</span>
-                            <span class="toggle-icon">▼</span>
-                        </button>
-                        <div class="class-category-content" style="display: none; padding: 15px;">
-                            <table style="width: 100%; border-collapse: collapse;">
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 180px;"><code>gsap-pin</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Pin section on scroll</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 200px;"><code>data-pinstart</code>, <code>data-pinend</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px;"><code>gsap-sticky-fade</code></td>
-                                    <td style="padding: 8px;">Sticky with fade out</td>
-                                    <td style="padding: 8px;">No additional data attributes</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- Advanced Effects -->
-                    <div>
-                        <button type="button" class="class-category-toggle" style="width: 100%; text-align: left; padding: 12px 15px; background: #f9f9f9; border: none; cursor: pointer; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
-                            <span>Advanced Effects</span>
-                            <span class="toggle-icon">▼</span>
-                        </button>
-                        <div class="class-category-content" style="display: none; padding: 15px;">
-                            <table style="width: 100%; border-collapse: collapse;">
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 180px;"><code>gsap-stagger</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Stagger children animations</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee; width: 200px;"><code>data-stagger="0.1"</code>, <code>data-distance</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>gsap-text-reveal</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Text reveal line by line</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Reveals <code>p</code>, <code>h1-h6</code> tags</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>gsap-counter</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Animated counter</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>data-target="100"</code>, <code>data-duration</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>gsap-progress</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Progress bar fill</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>data-percent="100"</code>, <code>data-duration</code></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>gsap-skew</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Skew on scroll</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Skew based on scroll velocity</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>gsap-blur</code></td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Blur on scroll</td>
-                                    <td style="padding: 8px; border-bottom: 1px solid #eee;">Creates blur effect during scroll</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px;"><code>gsap-mobile-disable</code></td>
-                                    <td style="padding: 8px;">Disable on mobile</td>
-                                    <td style="padding: 8px;">Add to prevent animation on screens ≤768px</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <h3 style="margin-top: 30px;">Usage Example</h3>
-                <pre style="background: #f4f4f4; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 12px;"><code>&lt;!-- Fade up with custom distance and duration --&gt;
-&lt;div class="gsap-fade-up" data-distance="100" data-duration="1.2" data-delay="0.3"&gt;
-    Content fades in from below
-&lt;/div&gt;
-
-&lt;!-- Parallax effect --&gt;
-&lt;div class="gsap-parallax" data-speed="-5"&gt;
-    Background moves slower
-&lt;/div&gt;
-
-&lt;!-- Stagger animation --&gt;
-&lt;div class="gsap-stagger" data-stagger="0.2"&gt;
-    &lt;p&gt;First paragraph&lt;/p&gt;
-    &lt;p&gt;Second paragraph&lt;/p&gt;
-    &lt;p&gt;Third paragraph&lt;/p&gt;
+                                <!-- Step 2 -->
+                                <div style="background: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #353f6d;">
+                                    <div style="font-weight: 600; color: #353f6d; font-size: 16px; margin-bottom: 10px;">
+                                        <span style="background: #353f6d; color: white; padding: 4px 10px; border-radius: 4px; margin-right: 10px;">2</span>
+                                        Add the ID to Your HTML Element
+                                    </div>
+                                    <p style="margin: 10px 0 10px 40px; color: #555; line-height: 1.6;">
+                                        In your page builder or HTML editor, add the ID attribute to the element you want to animate:
+                                    </p>
+                                    <pre style="background: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 6px; margin: 10px 0 0 40px; overflow-x: auto; font-size: 13px; line-height: 1.5;"><code>&lt;div id="hero-section"&gt;
+    Your content here
 &lt;/div&gt;</code></pre>
+                                </div>
 
-                <!-- Demo Files Section -->
-                <hr style="margin-top: 40px; margin-bottom: 30px;">
+                                <!-- Step 3 -->
+                                <div style="background: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #353f6d;">
+                                    <div style="font-weight: 600; color: #353f6d; font-size: 16px; margin-bottom: 10px;">
+                                        <span style="background: #353f6d; color: white; padding: 4px 10px; border-radius: 4px; margin-right: 10px;">3</span>
+                                        Save and Watch it Animate!
+                                    </div>
+                                    <p style="margin: 10px 0 0 40px; color: #555; line-height: 1.6;">
+                                        Click "Save Settings" below, then view your page. The element will smoothly animate into view when users scroll to it.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                <h2>📚 Animation Resources</h2>
+                        <!-- Animation Types Reference -->
+                        <div style="margin-bottom: 35px;">
+                            <h3 style="color: #353f6d; font-size: 20px; border-bottom: 2px solid #353f6d; padding-bottom: 10px;">Available Animation Types</h3>
 
-                <!-- Animation Examples Reference -->
-                <div style="background: #f5f5f5; padding: 20px; border-left: 4px solid #0073aa; margin-bottom: 20px;">
-                    <h3 style="margin-top: 0;">📖 Animation Examples & Code Reference</h3>
-                    <p>Complete reference guide with all animation classes, code examples, and data attributes.</p>
-                    <a href="<?php echo esc_url(plugin_dir_url(__FILE__) . 'ANIMATION-EXAMPLES.html'); ?>" target="_blank" class="button button-secondary" style="margin-top: 10px;">
-                        Open Examples Guide →
-                    </a>
-                </div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
+                                <!-- Fade Animations -->
+                                <div style="background: #f8f9fa; padding: 15px; border-radius: 6px;">
+                                    <div style="font-weight: 600; color: #353f6d; margin-bottom: 8px; font-size: 14px;">Fade Effects</div>
+                                    <ul style="margin: 0; padding-left: 20px; color: #555; font-size: 13px; line-height: 1.8;">
+                                        <li>Fade In</li>
+                                        <li>Fade Up</li>
+                                        <li>Fade Down</li>
+                                        <li>Fade Left</li>
+                                        <li>Fade Right</li>
+                                    </ul>
+                                </div>
 
-                <!-- Live Animation Demo -->
-                <div style="background: #f5f5f5; padding: 20px; border-left: 4px solid #00a32a; margin-bottom: 20px;">
-                    <h3 style="margin-top: 0;">🎬 Live Animation Demo</h3>
-                    <p>See all 20+ animations in action with working scroll effects.</p>
-                    <a href="<?php echo esc_url(plugin_dir_url(__FILE__) . 'ANIMATION-DEMO.html'); ?>" target="_blank" class="button button-secondary" style="margin-top: 10px;">
-                        Open Live Demo →
-                    </a>
+                                <!-- Slide Animations -->
+                                <div style="background: #f8f9fa; padding: 15px; border-radius: 6px;">
+                                    <div style="font-weight: 600; color: #353f6d; margin-bottom: 8px; font-size: 14px;">Slide Effects</div>
+                                    <ul style="margin: 0; padding-left: 20px; color: #555; font-size: 13px; line-height: 1.8;">
+                                        <li>Slide Up</li>
+                                        <li>Slide Down</li>
+                                        <li>Slide Left</li>
+                                        <li>Slide Right</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Special Effects -->
+                                <div style="background: #f8f9fa; padding: 15px; border-radius: 6px;">
+                                    <div style="font-weight: 600; color: #353f6d; margin-bottom: 8px; font-size: 14px;">Special Effects</div>
+                                    <ul style="margin: 0; padding-left: 20px; color: #555; font-size: 13px; line-height: 1.8;">
+                                        <li>Scale In</li>
+                                        <li>Zoom In</li>
+                                        <li>Rotate In</li>
+                                        <li>Flip In</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timing Explained -->
+                        <div style="margin-bottom: 35px;">
+                            <h3 style="color: #353f6d; font-size: 20px; border-bottom: 2px solid #353f6d; padding-bottom: 10px;">Understanding Timing Settings</h3>
+
+                            <div style="background: #f8f9fa; padding: 20px; border-radius: 6px; margin-top: 20px;">
+                                <div style="margin-bottom: 20px;">
+                                    <div style="font-weight: 600; color: #353f6d; margin-bottom: 8px; font-size: 15px;">⏱️ Duration</div>
+                                    <p style="margin: 0; color: #555; line-height: 1.6; font-size: 14px;">
+                                        How long the animation takes to complete, in seconds. <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">1</code> second is smooth and natural for most effects.
+                                    </p>
+                                </div>
+
+                                <div style="margin-bottom: 20px;">
+                                    <div style="font-weight: 600; color: #353f6d; margin-bottom: 8px; font-size: 15px;">⏲️ Delay</div>
+                                    <p style="margin: 0; color: #555; line-height: 1.6; font-size: 14px;">
+                                        Wait time before the animation starts, in seconds. Use <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">0</code> to start immediately, or <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">0.3</code> for a subtle delay.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <div style="font-weight: 600; color: #353f6d; margin-bottom: 8px; font-size: 15px;">📈 Easing</div>
+                                    <p style="margin: 0; color: #555; line-height: 1.6; font-size: 14px;">
+                                        Controls the animation's acceleration curve. <strong>Power1 Out</strong> is great for beginners—smooth start, gentle end. Try <strong>Back Out</strong> for a playful bounce effect!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Example Showcase -->
+                        <div style="margin-bottom: 20px;">
+                            <h3 style="color: #353f6d; font-size: 20px; border-bottom: 2px solid #353f6d; padding-bottom: 10px;">Example: Animating a Hero Section</h3>
+
+                            <div style="background: #f8f9fa; padding: 20px; border-radius: 6px; margin-top: 20px;">
+                                <p style="margin: 0 0 15px 0; color: #555; line-height: 1.6; font-size: 14px;">
+                                    <strong>In the table above, add:</strong>
+                                </p>
+                                <ul style="margin: 0 0 15px 0; color: #555; line-height: 1.8; padding-left: 25px; font-size: 14px;">
+                                    <li>HTML ID: <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">hero-section</code></li>
+                                    <li>Animation Type: <strong>Fade Up</strong></li>
+                                    <li>Duration: <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">1.2</code> seconds</li>
+                                    <li>Delay: <code style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">0.2</code> seconds</li>
+                                    <li>Easing: <strong>Power2 Out</strong></li>
+                                </ul>
+
+                                <p style="margin: 0 0 10px 0; color: #555; line-height: 1.6; font-size: 14px;">
+                                    <strong>Then in your HTML or page builder:</strong>
+                                </p>
+                                <pre style="background: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; margin: 0;"><code>&lt;section id="hero-section"&gt;
+    &lt;h1&gt;Welcome to Our Website&lt;/h1&gt;
+    &lt;p&gt;This will fade up smoothly when it scrolls into view!&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div style="background: #f8f9fa; padding: 20px 30px; border-top: 2px solid #e9ecef; text-align: center;">
+                        <p style="margin: 0; color: #6c757d; font-size: 13px;">
+                            Powered by <strong style="color: #353f6d;">Blueprint8</strong> •
+                            <a href="https://www.blu8print.com" target="_blank" style="color: #353f6d; text-decoration: none; font-weight: 600;">www.blu8print.com</a>
+                        </p>
+                    </div>
                 </div>
 
                 <p class="submit">
@@ -1194,17 +1115,6 @@ class GSAP_Scroll_Animations {
                     $(this).closest('tr').remove();
                 } else {
                     alert('You need at least one row.');
-                }
-            });
-
-            // Toggle class category sections
-            $('.class-category-toggle').on('click', function() {
-                $(this).next('.class-category-content').slideToggle(300);
-                var toggleIcon = $(this).find('.toggle-icon');
-                if (toggleIcon.text() === '▼') {
-                    toggleIcon.text('▲');
-                } else {
-                    toggleIcon.text('▼');
                 }
             });
         });
